@@ -15,33 +15,36 @@
 
 <form ng-submit="add_member()">
     <h2>Party</h2>
+
     <ul class="party">
         <li ng-repeat="name in members">
             <span class="name">{{name}}</span>
             <span class="paid"><strong>Paid:</strong> {{members_balance[name] | currency}}</span>
             <span class="balance"><strong>Balance:</strong> {{avg_expense - members_balance[name] | currency}}</span>
         </li>
+
+        <li>
+            <input type="text" ng-model="memberName" placeholder="Member name" />
+            <input type="submit" value="Add">
+        </li>
     </ul>
-    <input type="text" ng-model="memberName" placeholder="Member name" />
-    <input type="submit" value="Add">
 </form>
 
 <form ng-submit="add_expense()">
-    <h2>Add Expense</h2>
-    <input type="text" ng-model="amount" placeholder="$" />
-    <input type="text" ng-model="description" placeholder="Description" />
-    <select multiple ng-model="who">
-        <option ng-repeat="name in members">{{name}}</option>
-    </select>
-    <input type="submit">
-
-</form>
-
-<div>
     <h2>Expenses</h2>
-    <strong>Total:</strong> {{total_expense | currency}},
-    <strong>Average:</strong> {{avg_expense | currency}},
+
+    <span class="total"><strong>Total:</strong> {{total_expense | currency}}</span>
+    <span class="average"><strong>Average:</strong> {{avg_expense | currency}}</span>
+
     <ul class="expenses">
+        <li>
+            <input type="text" ng-model="amount" placeholder="$" />
+            <input type="text" ng-model="description" placeholder="Description" />
+            <select multiple ng-model="who">
+                <option ng-repeat="name in members">{{name}}</option>
+            </select>
+            <input type="submit" value="Add">
+        </li>
         <li ng-repeat="expense in expenses">
             <div class="amount">{{expense.amount | currency}}</div>
             <div class="who" ng-repeat="person in expense.who">
@@ -50,7 +53,8 @@
             <div class="description">{{expense.description}}</div>
         </li>
     </ul>
-</div>
+</form>
+
 
 </div>
 
