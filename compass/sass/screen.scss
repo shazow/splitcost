@@ -1,0 +1,113 @@
+$margin-small: 10px;
+$margin: $margin-small * 2;
+$span: 40px;
+
+$font-size: 14px;
+
+$color-text: #ddd;
+$color-emphasis: #e1be26;
+$color-header-background: rgba(20, 20, 20, 0.4);
+$color-header-shadow: rgba(20, 20, 20, 0.3);
+$color-background: rgba(20, 20, 20, 0.8);
+$color-shadow: rgba(20, 20, 20, 0.6);
+$color-border: rgba(255, 255, 255, 0.05);
+
+
+// Blueprint configuration:
+
+$link-color: $color-emphasis;
+$link-hover-color: lighten($color-emphasis, 10%);
+$font-color: $color-text;
+
+$blueprint-grid-columns: 16;
+$blueprint-grid-margin: $margin-small;
+$blueprint-grid-width: $span - $margin-small;
+
+$container-width: $blueprint-grid-columns * $span - $blueprint-grid-margin;
+
+
+@import "blueprint";
+@import "blueprint/reset";
+@import "blueprint/colors";
+@import "blueprint/typography";
+@import "compass/css3";
+
+
+body {
+    @include blueprint-typography-body();
+    background-image: $image-background;
+    background-color: $color-background;
+    font-size: $font-size;
+}
+
+@include blueprint-typography-defaults();
+
+footer {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+h1 {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    color: darken($color-text, 30%);
+
+    small {
+        text-transform: uppercase;
+        font-size: 0.5em;
+    }
+}
+
+h3 {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    font-size: 1em;
+    font-weight: bold;
+    color: darken($color-text, 40%);
+}
+
+em {
+    color: $color-emphasis;
+    font-style: normal;
+}
+
+strong {
+    color: lighten($font-color, 50%);
+}
+
+ul, ol {
+    margin: 0 0 1em 0.5em;
+}
+
+li {
+    padding-bottom: 0.5em;
+}
+
+label {
+    display: block;
+}
+
+small {
+    color: darken($color-text, 50%);
+}
+
+a.action, a.action:visited {
+    color: lighten($link-color, 50%);
+    cursor: pointer;
+}
+
+.container {
+    @include container;
+    margin: 0 auto $margin auto;
+    padding: $margin;
+}
