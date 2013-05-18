@@ -4,11 +4,9 @@ $span: 40px;
 
 $font-size: 14px;
 
-$color-text: #ddd;
+$color-text: #333;
 $color-emphasis: #e1be26;
-$color-header-background: rgba(20, 20, 20, 0.4);
-$color-header-shadow: rgba(20, 20, 20, 0.3);
-$color-background: rgba(20, 20, 20, 0.8);
+$color-background: #fff;
 $color-shadow: rgba(20, 20, 20, 0.6);
 $color-border: rgba(255, 255, 255, 0.05);
 
@@ -35,7 +33,6 @@ $container-width: $blueprint-grid-columns * $span - $blueprint-grid-margin;
 
 body {
     @include blueprint-typography-body();
-    background-image: $image-background;
     background-color: $color-background;
     font-size: $font-size;
 }

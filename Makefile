@@ -1,6 +1,6 @@
 ## Develop:
 
-serve: setup requirements
+serve:
 	python -m SimpleHTTPServer
 
 
