@@ -5,16 +5,31 @@ function parseDollar(s) {
 
 function CostCtrl($scope) {
     $scope.expenses = [];
-    $scope.members = [];
+    $scope.members = [
+        {
+            id: 1,
+            name: 'Andrey',
+            paid: 0.0,
+            _selected: true
+        },
+        {
+            id: 2,
+            name: 'Tracy',
+            paid: 0.0,
+            _selected: false
+        },
+    ];
 
     $scope.avgExpense = 0.0;
     $scope.totalExpense = 0.0;
 
     $scope.addMember = function() {
+        var id = $scope.members.length + 1;
         $scope.members.push({
+            id: id,
             name: $scope.memberName.trim(),
             paid: 0.0,
-            _selected: false
+            _selected: id == 1
         });
         $scope.memberName = '';
     };
@@ -41,6 +56,6 @@ function CostCtrl($scope) {
             who: who
         });
         $scope.totalExpense += amount;
-        $scope.avgExpense = $scope.totalExpense / $scope.num;
+        $scope.avgExpense = $scope.totalExpense / num;
     };
 };

@@ -31,6 +31,14 @@ $container-width: $blueprint-grid-columns * $span - $blueprint-grid-margin;
 @import "compass/css3";
 
 
+@mixin label-color($_color) {
+    background: $_color;
+    color: lighten($_color, 60%);
+    border: 1px solid darken($_color, 10%);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+
 body {
     @include blueprint-typography-body();
     background-color: $color-background;
@@ -87,7 +95,7 @@ ul, ol {
 }
 
 li {
-    padding-bottom: 0.5em;
+    margin-bottom: 0.5em;
 }
 
 label {
@@ -103,8 +111,68 @@ a.action, a.action:visited {
     cursor: pointer;
 }
 
+
+input {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 0 0.5em;
+    margin: 0 0.5em 0 0;
+    font-size: 0.8em;
+    line-height: 24px;
+    vertical-align: middle;
+
+    @include border-radius(3px);
+
+    &[type="submit"] {
+        padding: 0 1em;
+        background: #ddd;
+        border-color: #ddd;
+        color: #222;
+        cursor: pointer;
+    }
+}
+
 .container {
     @include container;
     margin: 0 auto $margin auto;
     padding: $margin;
 }
+
+.members {
+    display: inline-block;
+    margin: 0 1em;
+
+    input {
+        display: none;
+    }
+
+    label.unselected {
+        color: #999;
+        background: #ddd;
+        cursor: pointer;
+        border: 1px solid #eee;
+        text-shadow: none;
+    }
+}
+
+.party {
+    .name, input[type="text"] {
+        width: span(3);
+        text-align: center;
+    }
+}
+
+.name {
+    @include border-radius(3px);
+    @include label-color(#666);
+    padding: 1px 0.5em;
+    display: inline-block;
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
+    text-align: center;
+}
+
+.color-1 { @include label-color(#b05b00); }
+.color-2 { @include label-color(#142433); }
+.color-3 { @include label-color(#2e9742); }
+.color-4 { @include label-color(#93972e); }
+.color-5 { @include label-color(#2f101a); }

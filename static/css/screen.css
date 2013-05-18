@@ -287,7 +287,7 @@ ul, ol {
 }
 
 li {
-  padding-bottom: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 label {
@@ -303,6 +303,27 @@ a.action, a.action:visited {
   cursor: pointer;
 }
 
+input {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  padding: 0 0.5em;
+  margin: 0 0.5em 0 0;
+  font-size: 0.8em;
+  line-height: 24px;
+  vertical-align: middle;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+input[type="submit"] {
+  padding: 0 1em;
+  background: #ddd;
+  border-color: #ddd;
+  color: #222;
+  cursor: pointer;
+}
+
 .container {
   width: 630px;
   margin: 0 auto;
@@ -310,4 +331,76 @@ a.action, a.action:visited {
   *zoom: 1;
   margin: 0 auto 20px auto;
   padding: 20px;
+}
+
+.members {
+  display: inline-block;
+  margin: 0 1em;
+}
+.members input {
+  display: none;
+}
+.members label.unselected {
+  color: #999;
+  background: #ddd;
+  cursor: pointer;
+  border: 1px solid #eee;
+  text-shadow: none;
+}
+
+.party .name, .party input[type="text"] {
+  width: 110px;
+  text-align: center;
+}
+
+.name {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  background: #666666;
+  color: white;
+  border: 1px solid #4d4d4d;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  padding: 1px 0.5em;
+  display: inline-block;
+  margin-right: 0.5em;
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+
+.color-1 {
+  background: #b05b00;
+  color: #fff1e3;
+  border: 1px solid #7d4100;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.color-2 {
+  background: #142433;
+  color: #9fbdda;
+  border: 1px solid #060a0e;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.color-3 {
+  background: #2e9742;
+  color: #fafdfa;
+  border: 1px solid #227031;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.color-4 {
+  background: #93972e;
+  color: #fdfdfa;
+  border: 1px solid #6d7022;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.color-5 {
+  background: #2f101a;
+  color: #db96ac;
+  border: 1px solid #090305;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }

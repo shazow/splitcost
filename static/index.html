@@ -18,13 +18,13 @@
 
     <ul class="party">
         <li ng-repeat="member in members">
-            <span class="name">{{member.name}}</span>
+            <span class="name color-{{member.id}}">{{member.name}}</span>
             <span class="paid"><strong>Paid:</strong> {{member.paid | currency}}</span>
             <span class="balance"><strong>Balance:</strong> {{avgExpense - member.paid | currency}}</span>
         </li>
 
         <li>
-            <input type="text" ng-model="memberName" placeholder="Member name" />
+            <input type="text" ng-model="memberName" placeholder="Name" />
             <input type="submit" value="Add">
         </li>
     </ul>
@@ -38,10 +38,10 @@
 
     <ul class="expenses">
         <li>
-            <input type="text" ng-model="amount" placeholder="$" />
+            <input type="text" ng-model="amount" placeholder="$" size="6" />
             <input type="text" ng-model="description" placeholder="Description" />
-            <div class="members" ng-repeat="member in members">
-                <label>{{member.name}}
+            <div class="members">
+                <label ng-repeat="member in members" class="name color-{{member.id}} {{!member._selected && 'unselected' || ''}}">{{member.name}}
                     <input type="checkbox" ng-model="member._selected" />
                 </label>
             </div>
