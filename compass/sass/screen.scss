@@ -37,8 +37,7 @@ $container-width: $blueprint-grid-columns * $span - $blueprint-grid-margin;
 @mixin label-color($_color) {
     background: $_color;
     color: lighten($_color, 60%);
-    border: $border-width solid darken($_color, 8%);
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    border: $border-width solid $_color;
 }
 
 
@@ -57,6 +56,10 @@ footer {
     margin-bottom: 1em;
     margin-top: 3em;
     padding-top: 0.5em;
+}
+
+a {
+    text-decoration: none;
 }
 
 p {
@@ -125,12 +128,15 @@ input {
     &[type="submit"] {
         padding: 0 1em;
         background: #bbb;
-        border-color: #888;
+        border-color: #aaa;
         color: #222;
         font-weight: bold;
         cursor: pointer;
 
-        @include background-image(linear-gradient(#fff, #aaa));
+        @include background-image(linear-gradient(#fff, #ccc));
+    }
+    &[type="submit"]:hover {
+        @include background-image(linear-gradient(#fff, #ddd));
     }
 }
 

@@ -252,6 +252,10 @@ footer {
   padding-top: 0.5em;
 }
 
+a {
+  text-decoration: none;
+}
+
 p {
   margin-bottom: 1em;
 }
@@ -318,15 +322,22 @@ input {
 input[type="submit"] {
   padding: 0 1em;
   background: #bbb;
-  border-color: #888;
+  border-color: #aaa;
   color: #222;
   font-weight: bold;
   cursor: pointer;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #aaaaaa));
-  background-image: -webkit-linear-gradient(#ffffff, #aaaaaa);
-  background-image: -moz-linear-gradient(#ffffff, #aaaaaa);
-  background-image: -o-linear-gradient(#ffffff, #aaaaaa);
-  background-image: linear-gradient(#ffffff, #aaaaaa);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #cccccc));
+  background-image: -webkit-linear-gradient(#ffffff, #cccccc);
+  background-image: -moz-linear-gradient(#ffffff, #cccccc);
+  background-image: -o-linear-gradient(#ffffff, #cccccc);
+  background-image: linear-gradient(#ffffff, #cccccc);
+}
+input[type="submit"]:hover {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #dddddd));
+  background-image: -webkit-linear-gradient(#ffffff, #dddddd);
+  background-image: -moz-linear-gradient(#ffffff, #dddddd);
+  background-image: -o-linear-gradient(#ffffff, #dddddd);
+  background-image: linear-gradient(#ffffff, #dddddd);
 }
 
 .container {
@@ -388,8 +399,7 @@ input[type="submit"] {
   border-radius: 3px;
   background: #666666;
   color: white;
-  border: 1px solid #525252;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  border: 1px solid #666666;
   padding: 1px 0.5em;
   display: inline-block;
   margin-right: 0.5em;
@@ -405,57 +415,49 @@ input[type="submit"] {
 .color-1 {
   background: #086ca2;
   color: #dff3fd;
-  border: 1px solid #06527b;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  border: 1px solid #086ca2;
 }
 
 .color-2 {
   background: #bf9130;
   color: white;
-  border: 1px solid #9e7828;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  border: 1px solid #bf9130;
 }
 
 .color-3 {
   background: #bf3030;
   color: white;
-  border: 1px solid #9e2828;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  border: 1px solid #bf3030;
 }
 
 .color-4 {
   background: #269926;
   color: #f5fcf5;
-  border: 1px solid #1e781e;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  border: 1px solid #269926;
 }
 
 .color-5 {
   background: #612580;
   color: #efe1f6;
-  border: 1px solid #491c60;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  border: 1px solid #612580;
 }
 
 .color-6 {
   background: #bdbf30;
   color: white;
-  border: 1px solid #9d9e28;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  border: 1px solid #bdbf30;
 }
 
 .color-7 {
   background: #b22d47;
   color: white;
-  border: 1px solid #91253a;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  border: 1px solid #b22d47;
 }
 
 .color-8 {
   background: #52a529;
   color: white;
-  border: 1px solid #428421;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  border: 1px solid #52a529;
 }
 
 /* Animations */
