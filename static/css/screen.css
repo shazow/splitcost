@@ -255,14 +255,16 @@ h1 {
 }
 
 h2 {
-  font-size: 1.5em;
-  margin-top: 1em;
-  margin-bottom: 0.5em;
+  font-size: 5em;
+  margin: 20px 0 10px 0;
   color: black;
 }
 h2 small {
   text-transform: uppercase;
-  font-size: 0.5em;
+  font-size: 14px;
+  font-weight: bold;
+  color: #5586bb;
+  margin-left: -1em;
 }
 
 h3 {

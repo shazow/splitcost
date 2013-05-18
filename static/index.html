@@ -14,7 +14,12 @@
 <div class="container" ng-controller="CostCtrl">
 
 <form ng-submit="addMember()">
-    <h2>Party</h2>
+    <h2>
+        Party
+        <small ng-show="members.length == 0">Who was there?</small>
+        <small ng-show="members.length == 1">One more...</small>
+        <small ng-show="members.length >= 2">What everyone owes</small>
+    </h2>
 
     <ul class="party">
         <li ng-repeat="member in members">
@@ -32,8 +37,11 @@
     </ul>
 </form>
 
-<form ng-submit="addExpense()" ng-show="members.length">
-    <h2>Expenses</h2>
+<form ng-submit="addExpense()" ng-show="members.length >= 2">
+    <h2>
+        Ledger
+        <small>Shared purchases</small>
+    </h2>
 
     <div class="tally">
         <span class="total"><strong>Total:</strong> {{totalExpense | currency}}</span>
