@@ -130,7 +130,7 @@ input {
         font-weight: bold;
         cursor: pointer;
 
-        @include background-image(linear-gradient(white, #aaaaaa));
+        @include background-image(linear-gradient(#fff, #aaa));
     }
 }
 
