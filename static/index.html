@@ -39,12 +39,12 @@
 
         <li class="control">
             <input type="text" ng-model="memberName" placeholder="Name" />
-            <input type="submit" value="Add">
+            <input type="submit" value="Add Person">
         </li>
     </ul>
 </form>
 
-<form ng-submit="addExpense()" ng-show="members.length >= 2">
+<form ng-submit="addExpense()" ng-show="members.length >= 2" ng-animate="{show: 'slideOut'}">
     <h2>
         Ledger
         <small>Shared purchases</small>
@@ -64,7 +64,7 @@
                     <input type="checkbox" ng-model="member._selected" />
                 </label>
             </div>
-            <input type="submit" value="Add">
+            <input type="submit" value="Add Expense">
         </li>
 
         <li ng-repeat="expense in expenses" class="item">
