@@ -1,19 +1,3 @@
-/*
-var modPressed = false;
-
-window.addEventListener('keydown', function(e) {
-    if (e.keyCode == 16 || e.keyCode == 17) {
-        modPressed = true;
-    }
-}, false);
-
-window.addEventListener('keyup', function(e) {
-    if (e.keyCode == 16 || e.keyCode == 17) {
-        modPressed = false;
-    }
-}, false);
-*/
-
 function parseDollar(s) {
     return Number(s.replace('$', ''));
 };
@@ -38,9 +22,12 @@ function CostCtrl($scope) {
         $scope.avgExpense = $scope.totalExpense / $scope.members.length;
     };
 
-    $scope.getMember = function(name) {
+    $scope.selectMember = function(selected) {
+        if (modPressed) return;
+
         angular.forEach($scope.members, function(member) {
-            if (member.name == name) return member;
+            if (member.name == selected.name) return;
+            member._selected = false;
         });
     };
 
@@ -67,7 +54,7 @@ function CostCtrl($scope) {
         $scope.description = '';
         $scope.amount = '';
 
-        document.getElementById('expense-amount').focus();
+        $('#expense-amount').focus();
     };
 
     $scope.getNames = function(members) {
@@ -78,3 +65,37 @@ function CostCtrl($scope) {
         return names;
     };
 };
+
+
+
+/* Key and mouse magic: */
+
+var modPressed = false;
+
+window.addEventListener('keydown', function(e) {
+    if (e.keyCode >= 16 || e.keyCode <= 18) {
+        modPressed = true;
+    }
+}, false);
+
+window.addEventListener('keyup', function(e) {
+    if (e.keyCode >= 16 || e.keyCode <= 18) {
+        modPressed = false;
+    }
+}, false);
+
+$.support.selectstart = "onselectstart" in document.createElement("div");
+$.fn.disableSelection = function() {
+    return this.bind( ( $.support.selectstart ? "selectstart" : "mousedown" ) +
+        ".ui-disableSelection", function( event ) {
+        event.preventDefault();
+    });
+};
+
+$(function() {
+    $(".members").disableSelection();
+});
+
+/***/
+
+
