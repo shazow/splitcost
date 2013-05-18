@@ -283,11 +283,13 @@ strong {
 }
 
 ul, ol {
-  margin: 0 0 1em 0.5em;
+  margin: 0 0 1em 0;
+  padding: 0;
 }
 
 li {
   margin-bottom: 0.5em;
+  list-style: none;
 }
 
 label {
@@ -305,7 +307,7 @@ a.action, a.action:visited {
 
 input {
   border: 1px solid rgba(0, 0, 0, 0.5);
-  padding: 0 0.5em;
+  padding: 0 7px;
   margin: 0 0.5em 0 0;
   font-size: 0.8em;
   line-height: 24px;
@@ -318,9 +320,10 @@ input {
 }
 input[type="submit"] {
   padding: 0 1em;
-  background: #ddd;
+  background: #bbb;
   border-color: #ddd;
   color: #222;
+  font-weight: bold;
   cursor: pointer;
 }
 
@@ -331,6 +334,23 @@ input[type="submit"] {
   *zoom: 1;
   margin: 0 auto 20px auto;
   padding: 20px;
+}
+
+.tally {
+  margin-bottom: 1em;
+}
+.tally span {
+  margin-right: 1em;
+}
+
+.expenses span {
+  display: inline-block;
+}
+.expenses .amount {
+  padding: 0 0.5em;
+  margin: 0 0.5em 0 0;
+  width: 70px;
+  text-align: right;
 }
 
 .members {
@@ -352,6 +372,11 @@ input[type="submit"] {
   width: 110px;
   text-align: center;
 }
+.party .tally span {
+  margin-right: 0;
+  width: 70px;
+  display: inline-block;
+}
 
 .name {
   -webkit-border-radius: 3px;
@@ -368,6 +393,11 @@ input[type="submit"] {
   margin-right: 0.5em;
   margin-bottom: 0.5em;
   text-align: center;
+}
+
+.names {
+  color: #999999;
+  margin-left: 0.5em;
 }
 
 .color-1 {

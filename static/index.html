@@ -19,11 +19,13 @@
     <ul class="party">
         <li ng-repeat="member in members">
             <span class="name color-{{member.id}}">{{member.name}}</span>
-            <span class="paid"><strong>Paid:</strong> {{member.paid | currency}}</span>
-            <span class="balance"><strong>Balance:</strong> {{avgExpense - member.paid | currency}}</span>
+            <span class="tally">
+                <strong>Paid:</strong> <span class="paid">{{member.paid | currency}}</span>
+                <strong>Balance:</strong> <span class="balance">{{avgExpense - member.paid | currency}}</span>
+            </span>
         </li>
 
-        <li>
+        <li class="control">
             <input type="text" ng-model="memberName" placeholder="Name" />
             <input type="submit" value="Add">
         </li>
@@ -33,12 +35,14 @@
 <form ng-submit="addExpense()" ng-show="members.length">
     <h2>Expenses</h2>
 
-    <span class="total"><strong>Total:</strong> {{totalExpense | currency}}</span>
-    <span class="average"><strong>Average:</strong> {{avgExpense | currency}}</span>
+    <div class="tally">
+        <span class="total"><strong>Total:</strong> {{totalExpense | currency}}</span>
+        <span class="average"><strong>Average:</strong> {{avgExpense | currency}}</span>
+    </div>
 
     <ul class="expenses">
-        <li>
-            <input type="text" ng-model="amount" placeholder="$" size="6" />
+        <li class="control">
+            <input type="text" class="amount" ng-model="amount" placeholder="$" />
             <input type="text" ng-model="description" placeholder="Description" />
             <div class="members">
                 <label ng-repeat="member in members" class="name color-{{member.id}} {{!member._selected && 'unselected' || ''}}">{{member.name}}
@@ -48,12 +52,10 @@
             <input type="submit" value="Add">
         </li>
 
-        <li ng-repeat="expense in expenses">
-            <div class="amount">{{expense.amount | currency}}</div>
-            <div class="who" ng-repeat="member in expense.who">
-                <span>{{member.name}}</span>
-            </div>
-            <div class="description">{{expense.description}}</div>
+        <li ng-repeat="expense in expenses" class="item">
+            <span class="amount">{{expense.amount | currency}}</span>
+            <span class="description">{{expense.description}}</span>
+            <span class="names">({{getNames(expense.who).join(', ')}})</span>
         </li>
     </ul>
 </form>

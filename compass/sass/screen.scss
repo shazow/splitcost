@@ -91,11 +91,13 @@ strong {
 }
 
 ul, ol {
-    margin: 0 0 1em 0.5em;
+    margin: 0 0 1em 0;
+    padding: 0;
 }
 
 li {
     margin-bottom: 0.5em;
+    list-style: none;
 }
 
 label {
@@ -114,7 +116,7 @@ a.action, a.action:visited {
 
 input {
     border: 1px solid rgba(0, 0, 0, 0.5);
-    padding: 0 0.5em;
+    padding: 0 7px;
     margin: 0 0.5em 0 0;
     font-size: 0.8em;
     line-height: 24px;
@@ -124,9 +126,10 @@ input {
 
     &[type="submit"] {
         padding: 0 1em;
-        background: #ddd;
+        background: #bbb;
         border-color: #ddd;
         color: #222;
+        font-weight: bold;
         cursor: pointer;
     }
 }
@@ -135,6 +138,26 @@ input {
     @include container;
     margin: 0 auto $margin auto;
     padding: $margin;
+}
+
+.tally {
+    margin-bottom: 1em;
+    span {
+        margin-right: 1em;
+    }
+}
+
+.expenses {
+    span {
+        display: inline-block;
+    }
+
+    .amount {
+        padding: 0 0.5em;
+        margin: 0 0.5em 0 0;
+        width: span(2);
+        text-align: right;
+    }
 }
 
 .members {
@@ -159,6 +182,14 @@ input {
         width: span(3);
         text-align: center;
     }
+
+    .tally {
+        span {
+            margin-right: 0;
+            width: span(2);
+            display: inline-block;
+        }
+    }
 }
 
 .name {
@@ -171,8 +202,14 @@ input {
     text-align: center;
 }
 
+.names {
+    color: lighten($color-text, 40%);
+    margin-left: 0.5em;
+}
+
 .color-1 { @include label-color(#b05b00); }
 .color-2 { @include label-color(#142433); }
 .color-3 { @include label-color(#2e9742); }
 .color-4 { @include label-color(#93972e); }
 .color-5 { @include label-color(#2f101a); }
+
