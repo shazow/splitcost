@@ -241,8 +241,15 @@ caption {
 }
 
 footer {
+  width: 630px;
+  margin: 0 auto;
+  overflow: hidden;
+  *zoom: 1;
+  border-top: 5px solid #ddd;
   text-align: center;
   margin-bottom: 1em;
+  margin-top: 3em;
+  padding-top: 0.5em;
 }
 
 p {

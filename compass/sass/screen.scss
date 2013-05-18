@@ -51,8 +51,12 @@ body {
 @include blueprint-typography-defaults();
 
 footer {
+    @include container;
+    border-top: 5px solid #ddd;
     text-align: center;
     margin-bottom: 1em;
+    margin-top: 3em;
+    padding-top: 0.5em;
 }
 
 p {
