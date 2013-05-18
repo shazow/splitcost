@@ -63,6 +63,11 @@ function CostCtrl($scope) {
         });
         $scope.totalExpense += amount;
         $scope.avgExpense = $scope.totalExpense / $scope.members.length;
+
+        $scope.description = '';
+        $scope.amount = '';
+
+        document.getElementById('expense-amount').focus();
     };
 
     $scope.getNames = function(members) {

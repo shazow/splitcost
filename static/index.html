@@ -44,7 +44,7 @@
     </ul>
 </form>
 
-<form ng-submit="addExpense()" ng-show="members.length >= 2" ng-animate="{show: 'slideOut'}">
+<form ng-submit="addExpense()" ng-show="members.length >= 2" ng-animate="{show: 'fadeIn'}">
     <h2>
         Ledger
         <small>Shared purchases</small>
@@ -57,7 +57,7 @@
 
     <ul class="expenses">
         <li class="control">
-            <input type="text" class="amount" ng-model="amount" placeholder="$" />
+            <input type="text" class="amount" ng-model="amount" placeholder="$" id="expense-amount" />
             <input type="text" ng-model="description" placeholder="Description" />
             <div class="members">
                 <label ng-repeat="member in members" class="name color-{{member.id}} {{!member._selected && 'unselected' || ''}}">{{member.name}}
@@ -81,8 +81,6 @@
 
 <footer>A <a href="http://shazow.net/">shazow</a> project.</footer>
 
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
 
 <script src="js/core.js" type="text/javascript"></script>
 
