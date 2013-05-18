@@ -13,14 +13,14 @@
 
 <div class="container" ng-controller="CostCtrl">
 
-<form ng-submit="add_member()">
+<form ng-submit="addMember()">
     <h2>Party</h2>
 
     <ul class="party">
-        <li ng-repeat="name in members">
-            <span class="name">{{name}}</span>
-            <span class="paid"><strong>Paid:</strong> {{members_balance[name] | currency}}</span>
-            <span class="balance"><strong>Balance:</strong> {{avg_expense - members_balance[name] | currency}}</span>
+        <li ng-repeat="member in members">
+            <span class="name">{{member.name}}</span>
+            <span class="paid"><strong>Paid:</strong> {{member.paid | currency}}</span>
+            <span class="balance"><strong>Balance:</strong> {{avgExpense - member.paid | currency}}</span>
         </li>
 
         <li>
@@ -30,25 +30,28 @@
     </ul>
 </form>
 
-<form ng-submit="add_expense()">
+<form ng-submit="addExpense()" ng-show="members.length">
     <h2>Expenses</h2>
 
-    <span class="total"><strong>Total:</strong> {{total_expense | currency}}</span>
-    <span class="average"><strong>Average:</strong> {{avg_expense | currency}}</span>
+    <span class="total"><strong>Total:</strong> {{totalExpense | currency}}</span>
+    <span class="average"><strong>Average:</strong> {{avgExpense | currency}}</span>
 
     <ul class="expenses">
         <li>
             <input type="text" ng-model="amount" placeholder="$" />
             <input type="text" ng-model="description" placeholder="Description" />
-            <select multiple ng-model="who">
-                <option ng-repeat="name in members">{{name}}</option>
-            </select>
+            <div class="members" ng-repeat="member in members">
+                <label>{{member.name}}
+                    <input type="checkbox" ng-model="member._selected" />
+                </label>
+            </div>
             <input type="submit" value="Add">
         </li>
+
         <li ng-repeat="expense in expenses">
             <div class="amount">{{expense.amount | currency}}</div>
-            <div class="who" ng-repeat="person in expense.who">
-                <span>{{person}}</span>
+            <div class="who" ng-repeat="member in expense.who">
+                <span>{{member.name}}</span>
             </div>
             <div class="description">{{expense.description}}</div>
         </li>

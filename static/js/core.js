@@ -1,37 +1,46 @@
-function parse_dollar(s) {
+function parseDollar(s) {
     return Number(s);
-}
+};
+
 
 function CostCtrl($scope) {
     $scope.expenses = [];
     $scope.members = [];
-    $scope.members_balance = {};
 
-    $scope.num_members = 0;
-    $scope.avg_expense = 0.0;
-    $scope.total_expense = 0.0;
+    $scope.avgExpense = 0.0;
+    $scope.totalExpense = 0.0;
 
-    $scope.add_member = function() {
-        var name = $scope.memberName.trim();
-        $scope.members.push(name);
-        $scope.members_balance[name] = 0.0;
-        $scope.num_members += 1;
+    $scope.addMember = function() {
+        $scope.members.push({
+            name: $scope.memberName.trim(),
+            paid: 0.0,
+            _selected: false
+        });
         $scope.memberName = '';
     };
 
-    $scope.add_expense = function() {
-        var num_split = $scope.who.length;
-        var amount = parse_dollar($scope.amount);
-        var amount_each = amount / num_split;
+    $scope.getMember = function(name) {
+        angular.forEach($scope.members, function(member) {
+            if (member.name == name) return member;
+        });
+    };
+
+    $scope.addExpense = function() {
+        var num = $scope.members.length;
+        var amount = parseDollar($scope.amount);
+        var amountEach = amount / num;
+        var who = [];
+        angular.forEach($scope.members, function(member) {
+            if (!member._selected) return;
+            member.paid += amountEach;
+            who.push(member);
+        });
         $scope.expenses.push({
             amount: amount,
             description: $scope.description,
-            who: $scope.who
+            who: who
         });
-        angular.forEach($scope.who, function(name) {
-            $scope.members_balance[name.trim()] += amount_each;
-        });
-        $scope.total_expense += amount;
-        $scope.avg_expense = $scope.total_expense / $scope.num_members;
+        $scope.totalExpense += amount;
+        $scope.avgExpense = $scope.totalExpense / $scope.num;
     };
-}
+};
