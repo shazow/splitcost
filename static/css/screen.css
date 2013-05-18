@@ -459,7 +459,7 @@ input[type="submit"] {
 }
 
 /* Animations */
-.slideOut-setup {
+.fadeIn-setup {
   -webkit-transition: 0.5s linear opacity;
   -moz-transition: 0.5s linear opacity;
   -o-transition: 0.5s linear opacity;
@@ -467,6 +467,6 @@ input[type="submit"] {
   opacity: 0;
 }
 
-.slideOut-setup.slideOut-start {
+.fadeIn-setup.fadeIn-start {
   opacity: 1;
 }

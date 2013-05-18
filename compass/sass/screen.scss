@@ -219,11 +219,11 @@ input {
 
 /* Animations */
 
-.slideOut-setup {
+.fadeIn-setup {
     @include transition(0.5s linear opacity);
     opacity: 0;
 }
 
-.slideOut-setup.slideOut-start {
+.fadeIn-setup.fadeIn-start {
     opacity: 1;
 }
