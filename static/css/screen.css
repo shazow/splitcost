@@ -52,7 +52,7 @@ a img {
 body {
   line-height: 1.5;
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
-  color: #333333;
+  color: #15011a;
   font-size: 75%;
   background-color: white;
   font-size: 14px;
@@ -60,7 +60,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
-  color: #222222;
+  color: black;
 }
 h1 img, h2 img, h3 img, h4 img, h5 img, h6 img {
   margin: 0;
@@ -118,19 +118,19 @@ p .right {
 
 a {
   text-decoration: underline;
-  color: #e1be26;
+  color: #f3b169;
 }
 a:visited {
-  color: #ba9c1a;
+  color: #ef983a;
 }
 a:focus {
-  color: #e7cb53;
+  color: #fbe2c7;
 }
 a:hover {
-  color: #e7cb53;
+  color: #fbe2c7;
 }
 a:active {
-  color: #53e75c;
+  color: #aef798;
 }
 
 blockquote {
@@ -233,11 +233,11 @@ caption {
 }
 
 .quiet {
-  color: #666666;
+  color: #64057c;
 }
 
 .loud {
-  color: #111111;
+  color: black;
 }
 
 footer {
@@ -251,14 +251,16 @@ p {
 
 h1, h2 {
   font-size: 5em;
-  margin: 20px 0 10px 0;
-  color: black;
+  margin: 20px 0 20px 0;
+  color: #314508;
+  line-height: 1;
+  border-bottom: 5px solid #ddd;
 }
 h1 small, h2 small {
   text-transform: uppercase;
   font-size: 14px;
   font-weight: bold;
-  color: #5586bb;
+  color: #97cd39;
   margin-left: -1em;
 }
 
@@ -275,12 +277,12 @@ h3 {
 }
 
 em {
-  color: #e1be26;
+  color: #97cd39;
   font-style: normal;
 }
 
 strong {
-  color: #b3b3b3;
+  color: #cc23f7;
 }
 
 ul, ol {
@@ -365,7 +367,7 @@ input[type="submit"] {
   color: #999;
   background: #ddd;
   cursor: pointer;
-  border: 1px solid #eee;
+  border: 1px solid #eeeeee;
   text-shadow: none;
 }
 
@@ -387,7 +389,7 @@ input[type="submit"] {
   border-radius: 3px;
   background: #666666;
   color: white;
-  border: 1px solid #4d4d4d;
+  border: 1px solid #525252;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   padding: 1px 0.5em;
   display: inline-block;
@@ -397,41 +399,41 @@ input[type="submit"] {
 }
 
 .names {
-  color: #999999;
+  color: #b409de;
   margin-left: 0.5em;
 }
 
 .color-1 {
   background: #b05b00;
   color: #fff1e3;
-  border: 1px solid #7d4100;
+  border: 1px solid #874600;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
 .color-2 {
   background: #142433;
   color: #9fbdda;
-  border: 1px solid #060a0e;
+  border: 1px solid #090f16;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
 .color-3 {
   background: #2e9742;
   color: #fafdfa;
-  border: 1px solid #227031;
+  border: 1px solid #247834;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
 .color-4 {
   background: #93972e;
   color: #fdfdfa;
-  border: 1px solid #6d7022;
+  border: 1px solid #757824;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
 .color-5 {
   background: #2f101a;
   color: #db96ac;
-  border: 1px solid #090305;
+  border: 1px solid #110609;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
