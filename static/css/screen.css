@@ -51,8 +51,8 @@ a img {
 
 body {
   line-height: 1.5;
-  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
-  color: #212121;
+  font-family: "Ubuntu", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  color: #5d5d5d;
   font-size: 75%;
   background-color: white;
   font-size: 14px;
@@ -60,7 +60,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
-  color: #101010;
+  color: #4c4c4c;
 }
 h1 img, h2 img, h3 img, h4 img, h5 img, h6 img {
   margin: 0;
@@ -233,11 +233,11 @@ caption {
 }
 
 .quiet {
-  color: #545454;
+  color: #909090;
 }
 
 .loud {
-  color: black;
+  color: #3b3b3b;
 }
 
 footer {
@@ -245,7 +245,7 @@ footer {
   margin: 0 auto;
   overflow: hidden;
   *zoom: 1;
-  border-top: 5px solid #ddd;
+  border-top: 5px solid #dddddd;
   text-align: center;
   margin-bottom: 1em;
   margin-top: 3em;
@@ -262,10 +262,10 @@ p {
 
 h1, h2 {
   font-size: 5em;
-  margin: 40px 0 20px 0;
+  margin: 50px 0 20px 0;
   color: #3c3c3c;
-  line-height: 1;
-  border-bottom: 5px solid #ddd;
+  line-height: 26px;
+  border-bottom: 5px solid #dddddd;
 }
 h1 small, h2 small {
   text-transform: uppercase;
@@ -276,7 +276,7 @@ h1 small, h2 small {
 }
 
 h1 {
-  margin-top: 0;
+  margin-top: 10px;
 }
 
 em {
@@ -285,7 +285,7 @@ em {
 }
 
 strong {
-  color: #a1a1a1;
+  color: #dddddd;
 }
 
 ul, ol {
@@ -408,7 +408,7 @@ input[type="submit"]:hover {
 }
 
 .names {
-  color: #878787;
+  color: #c3c3c3;
   margin-left: 0.5em;
 }
 

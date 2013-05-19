@@ -4,9 +4,9 @@ $span: 40px;
 
 $font-size: 14px;
 
-$color-text: rgb(33, 33, 33); // rgb(21,1,26);
-$color-header: rgb(60, 60, 60); // rgb(49,69,8);
-$color-emphasis: rgb(170, 170, 170); // rgb(151,205,57);
+$color-text: rgb(93, 93, 93);
+$color-header: rgb(60, 60, 60);
+$color-emphasis: rgb(170, 170, 170);
 $color-background: #fff;
 $color-shadow: rgba(20, 20, 20, 0.6);
 $color-border: rgba(255, 255, 255, 0.05);
@@ -20,6 +20,7 @@ $link-color: rgb(243,177,105);
 $link-hover-color: lighten($link-color, 10%);
 $font-color: $color-text;
 
+$blueprint-font-family: "Ubuntu", "Helvetica Neue", Arial, Helvetica, sans-serif !default;
 $blueprint-grid-columns: 16;
 $blueprint-grid-margin: $margin-small;
 $blueprint-grid-width: $span - $margin-small;
@@ -68,9 +69,9 @@ p {
 
 h1, h2 {
     font-size: 5em;
-    margin: $margin*2 0 $margin 0;
+    margin: $margin*2.5 0 $margin 0;
     color: $color-header;
-    line-height: 1;
+    line-height: 26px;
 
     border-bottom: 5px solid #ddd;
 
@@ -84,7 +85,7 @@ h1, h2 {
 }
 
 h1 {
-    margin-top: 0;
+    margin-top: $margin-small;
 }
 
 em {
